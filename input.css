@@ -1,3 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-image: url("../img/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-position: 90% -25%;
+}
+
+#cta {
+  background-image: url("../img/bg-simplify-section-desktop.svg");
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 566px) {
+  body {
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: 50% -50%;
+  }
+
+  #cta {
+    background-image: url("../img/bg-simplify-section-mobile.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  top: 0;
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.menu {
+  /* opacity: 0; */
+  transition: all 1s;
+}
+
+
+/* .opa {
+  opacity: 1;
+} */
+
+#opa {
+  opacity: 1;
+}
+
+
+
+.hamburger-middle {
+  transform: translateY(8px);
+  opacity: 1;
+}
+
+.hamburger-bottom {
+  transform: translateY(16px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(2px)
+}
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(2px) translate(-6px)
+}
+
+.open .hamburger-middle {
+  opacity: 0;
+}
